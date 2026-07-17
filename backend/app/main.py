@@ -50,14 +50,27 @@ def monitoring():
 
     potentially_hazardous_asteroids_count = 0
 
+    asteroids_formatted = []
+
     for asteroid in asteroids_list:
+        new_asteroid = {
+            "name": asteroid["name"],
+            "estimated_diameter_min_meters": round(float(asteroid["estimated_diameter"]["meters"]["estimated_diameter_min"]), 2),
+            "estimated_diameter_max_meters": round(float(asteroid["estimated_diameter"]["meters"]["estimated_diameter_max"]), 2),
+            "is_potentially_hazardous_asteroid": asteroid["is_potentially_hazardous_asteroid"],
+            "close_approach_date": asteroid["close_approach_data"][0]["close_approach_date"],
+            "velocity_kmh": round(float(asteroid["close_approach_data"][0]["relative_velocity"]["kilometers_per_hour"]), 2),
+            "miss_distance_km": round(float(asteroid["close_approach_data"][0]["miss_distance"]["kilometers"]), 2)
+        }
+        asteroids_formatted.append(new_asteroid)
+
         if asteroid["is_potentially_hazardous_asteroid"]:
             potentially_hazardous_asteroids_count += 1
 
     asteroids_json = {
         "count": datas["element_count"],
         "potentially_hazardous_asteroids_count": potentially_hazardous_asteroids_count,
-        "asteroid_list": asteroids_list,
+        "asteroid_list": asteroids_formatted,
     }
 
     return asteroids_json
