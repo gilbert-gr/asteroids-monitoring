@@ -30,11 +30,18 @@ def monitoring():
         "end_date": end_date,
         "api_key": nasa_api_key,
     }
+    try:
+        response = httpx.get(url=nasa_endpoint, params=params)
+        response.raise_for_status()
+        datas = response.json()
 
-    response = httpx.get(url=nasa_endpoint, params=params)
-    response.raise_for_status()
-    datas = response.json()
+    except httpx.HTTPError as exc:
+        print(f"HTTP Exception for {exc.request.url} - {exc}")
 
+        return {
+            "error": "There was an error while contacting the NASA API."
+            }
+    
     asteroids_list = []
 
     for data in datas["near_earth_objects"].values():
