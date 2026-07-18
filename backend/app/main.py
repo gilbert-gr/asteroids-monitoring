@@ -12,9 +12,6 @@ nasa_endpoint = "https://api.nasa.gov/neo/rest/v1/feed"
 
 app = FastAPI()
 
-@app.get("/test")
-def test():
-    return {"message": "test completed succesfully"}
 
 @app.get("/monitoring")
 def monitoring():
@@ -54,6 +51,7 @@ def monitoring():
 
     for asteroid in asteroids_list:
         new_asteroid = {
+            "id": asteroid["id"],
             "name": asteroid["name"],
             "estimated_diameter_min_meters": round(float(asteroid["estimated_diameter"]["meters"]["estimated_diameter_min"]), 2),
             "estimated_diameter_max_meters": round(float(asteroid["estimated_diameter"]["meters"]["estimated_diameter_max"]), 2),
@@ -66,11 +64,13 @@ def monitoring():
 
         if asteroid["is_potentially_hazardous_asteroid"]:
             potentially_hazardous_asteroids_count += 1
+    
+    print(len(asteroids_formatted))
 
     asteroids_json = {
         "count": datas["element_count"],
         "potentially_hazardous_asteroids_count": potentially_hazardous_asteroids_count,
-        "asteroid_list": asteroids_formatted,
+        "asteroids_list": asteroids_formatted,
     }
 
     return asteroids_json
