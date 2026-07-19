@@ -1,0 +1,81 @@
+html {
+    background-color: #141414;
+}
+
+p {
+    color: white;
+    font-size: large;
+}
+
+h1 {
+    color: #7B2CFF;
+    text-transform: uppercase;
+    font-size: 3rem;
+    text-align: center;
+}
+
+h3 {
+    color: #39FF14;
+    text-transform: uppercase;
+    font-size: 2rem;
+    margin: 0;
+}
+
+.card-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.danger {
+    background-color: #FF2226;
+    height: 2em;
+    width: 12em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 0.5rem;
+}
+
+.card {
+    background-color: #2A004B;
+    border: 2px solid #00FFD5;
+    border-radius: 1rem;
+    padding: 1rem;
+}
+
+.asteroid-card {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 1.5fr;
+    width: 60%;
+}
+
+.statistic {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 15rem;
+    height: 4.5rem;
+    flex: 1;
+}
+
+.statistics {
+    display: flex;
+    justify-content: space-around;
+    width: 60%;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.asteroid-intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}

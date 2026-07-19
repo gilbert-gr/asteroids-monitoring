@@ -24,12 +24,13 @@ async function HomePage() {
   return (
     <div>
       <Title />
-      <AsteroidCount text="Asteroids monitored" count={data.count} />
-      <AsteroidCount
-        text="Potentially dangerous"
-        count={data.potentially_hazardous_asteroids_count}
-      />
-      <ul>
+      <div className="card-container">
+        <div className="statistics">
+            <AsteroidCount text="Asteroids monitored" count={data.count} />
+            <AsteroidCount text="Potentially dangerous" count={data.potentially_hazardous_asteroids_count}/>
+            <AsteroidCount text="Period" count={data.period} />
+        </div>
+        
         {data.asteroids_list.map((item) => {
           return (
               <AsteroidCard
@@ -38,7 +39,7 @@ async function HomePage() {
               />
           );
         })}
-      </ul>
+      </div>
     </div>
   );
 }

@@ -68,6 +68,7 @@ def monitoring():
     print(len(asteroids_formatted))
 
     asteroids_json = {
+        "period": f"{start_date} / {end_date}",
         "count": datas["element_count"],
         "potentially_hazardous_asteroids_count": potentially_hazardous_asteroids_count,
         "asteroids_list": asteroids_formatted,

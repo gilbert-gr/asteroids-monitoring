@@ -2,7 +2,7 @@ import React from "react"
 
 function AsteroidCount(props) {
     return (
-        <div>
+        <div className="card statistic">
              <p>{props.text}: {props.count}</p>
         </div>
     )
