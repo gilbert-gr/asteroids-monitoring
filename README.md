@@ -2,6 +2,12 @@
 
 A full-stack web application built with **Next.js** and **FastAPI** that monitors near-Earth asteroids using NASA's NeoWs API.
 
+## Live Demo
+
+https://asteroids-monitoring-phi.vercel.app/
+
+Backend API: https://asteroids-monitoring-production.up.railway.app
+
 ## Features
 
 * Monitor asteroids approaching Earth over the next 7 days
