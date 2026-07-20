@@ -3,6 +3,7 @@ import React from "react"
 import Title from "./Title";
 import AsteroidCount from "./AsteroidsCount";
 import AsteroidCard from "./AsteroidCard";
+import Footer from "./Footer";
 import {Switch} from "@mui/material"
 
 function Dashboard({data}) {
@@ -68,6 +69,7 @@ function Dashboard({data}) {
           );
         })}
       </div>
+      <Footer />
     </div>
   );
 }

@@ -18,7 +18,9 @@ def monitoring():
     today = dt.datetime.now()
 
     start_date = today.strftime("%Y-%m-%d")
+    start_date_formatted = today.strftime("%d %b")
     end_date = (today + dt.timedelta(days=7)).strftime("%Y-%m-%d")
+    end_date_formatted = (today + dt.timedelta(days=7)).strftime("%d %b")
     print(start_date)
     print(end_date)
 
@@ -68,7 +70,7 @@ def monitoring():
     print(len(asteroids_formatted))
 
     asteroids_json = {
-        "period": f"{start_date} / {end_date}",
+        "period": f"{start_date_formatted} / {end_date_formatted}",
         "count": datas["element_count"],
         "potentially_hazardous_asteroids_count": potentially_hazardous_asteroids_count,
         "asteroids_list": asteroids_formatted,

@@ -9,7 +9,7 @@ function AsteroidCard(props) {
                 <h3>{props.asteroid.name}</h3>
                 <Image src="/asteroid.svg" alt="asteroid svg" width={100} height={100} />
             </div>
-            <div>
+            <div className="container">
             <p>Estimated min diameter: {props.asteroid.estimated_diameter_min_meters} m</p>
             <p>Estimated max diameter: {props.asteroid.estimated_diameter_max_meters} m</p>
             {props.asteroid.is_potentially_hazardous_asteroid ? <DangerAlert /> : null}

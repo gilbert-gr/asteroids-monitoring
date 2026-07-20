@@ -1,24 +1,51 @@
-html {
-    background-color: #141414;
+body {
+    min-height: 100vh;
+    background: linear-gradient(90deg,rgba(131, 58, 180, 1) 0%, rgba(13, 13, 102, 1) 50%, rgba(94, 77, 0, 1) 100%);
+    background-size: 300% 300%;
+    animation: gradientAnimation 15s ease infinite;
 }
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: left center;
+    }
+
+    50% {
+        background-position: right center;
+    }
+
+    100% {
+        background-position: left center;
+    }
+}
+
 
 p, label {
     color: white;
     font-size: large;
 }
 
+
 h1 {
-    color: #7B2CFF;
-    text-transform: uppercase;
-    font-size: 3rem;
     text-align: center;
+    color: white;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+    padding: 2rem;
 }
+
 
 h3 {
     color: #39FF14;
     text-transform: uppercase;
     font-size: 2rem;
     margin: 0;
+}
+
+footer p {
+    text-align: center;
+    padding-top: 1rem;
+    color: #D7D7D7;
 }
 
 .card-container {
@@ -28,8 +55,6 @@ h3 {
     align-items: center;
     justify-content: center;
 }
-
-
 
 .danger {
     background-color: #FF2226;
@@ -43,10 +68,11 @@ h3 {
 }
 
 .card {
-    background-color: #2A004B;
+    background-color: #1d1638;
     border: 2px solid #00FFD5;
     border-radius: 1rem;
     padding: 1rem;
+    box-shadow: 0 0 20px rgba(0, 255, 213, 0.15);  
 }
 
 .asteroid-card {
@@ -57,12 +83,22 @@ h3 {
 
 .statistic {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
     width: 15rem;
-    height: 4.5rem;
+    min-height: 5rem;
     flex: 1;
+}
+
+.statistic p, .statistic h2 {
+    margin: 0.3rem;
+}
+
+.statistic h2 {
+    font-size: 1.5rem;
+    color: #8DFFF0;
 }
 
 .statistics {
@@ -103,4 +139,31 @@ h3 {
 
 .order option {
     background-color: #7B2CFF;
+}
+
+@media (max-width: 1024px) {
+    .asteroid-card, .statistics, .filter {
+        width: 70%;
+    }
+
+    .asteroid-card {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+        }
+}
+
+@media (max-width: 767px) {
+    .asteroid-card, .statistics, .filter {
+        width: 80%;
+    }
 }
