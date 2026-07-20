@@ -3,6 +3,8 @@ import datetime as dt
 import httpx
 from dotenv import load_dotenv
 import os
+from fastapi.middleware.cors import CORSMiddleware
+
 
 load_dotenv()
 
@@ -11,6 +13,14 @@ nasa_endpoint = "https://api.nasa.gov/neo/rest/v1/feed"
 
 
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 
 
 @app.get("/monitoring")
