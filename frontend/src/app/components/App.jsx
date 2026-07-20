@@ -3,7 +3,7 @@ import Dashboard from "./Dashboard";
 async function App() {
     let data;
     try {
-    const response = await fetch("http://127.0.0.1:8000/monitoring");
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/monitoring`);
     data = await response.json();
     } catch (err) {
     data = { message: `There was an error: ${err}` };
