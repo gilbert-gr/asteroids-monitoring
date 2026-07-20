@@ -67,6 +67,10 @@ footer p {
     border-radius: 0.5rem;
 }
 
+.danger p {
+    white-space: nowrap
+}
+
 .card {
     background-color: #1d1638;
     border: 2px solid #00FFD5;
@@ -89,7 +93,6 @@ footer p {
     text-align: center;
     width: 15rem;
     min-height: 5rem;
-    flex: 1;
 }
 
 .statistic p, .statistic h2 {
