@@ -6,7 +6,7 @@ A full-stack web application built with **Next.js** and **FastAPI** that monitor
 
 https://asteroids-monitoring-phi.vercel.app/
 
-Backend API: https://asteroids-monitoring-production.up.railway.app
+Backend API: https://asteroids-monitoring-production.up.railway.app/monitoring
 
 ## Features
 
