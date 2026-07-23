@@ -79,6 +79,8 @@ def monitoring():
     
     print(len(asteroids_formatted))
 
+    asteroids_formatted = sorted(asteroids_formatted, key=lambda x: x["close_approach_date"])
+
     asteroids_json = {
         "period": f"{start_date_formatted} / {end_date_formatted}",
         "count": datas["element_count"],
